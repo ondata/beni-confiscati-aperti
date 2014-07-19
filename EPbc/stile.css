@@ -2,7 +2,34 @@
       	margin: 0;
       	height: 100%;
       	padding:0px;
+      	background-color: #EB593C;
+      	font-family: 'Bree Serif', serif;
+      	color: white;
       }
       #mappa{
       	height:100%;
+      }
+
+      .centro {
+      	width: 400px;
+      	height: 300px;
+      	position: absolute;
+      	top:0;
+      	bottom: 0;
+      	left: 0;
+      	right: 0;
+      	margin: auto;
+      }
+      p{
+      	font-family: 'Raleway', sans-serif;
+      	color: white;
+      }
+
+      a:link,a:visited {
+      	color: #FFFFFF;
+      	text-decoration: underline;
+      }
+      a:hover {
+      	color: White;
+      	text-decoration: underline;
       }
