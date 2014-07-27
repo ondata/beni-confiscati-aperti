@@ -10,18 +10,28 @@
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 	<link rel="stylesheet" href="./css/cp.css" />
 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-	<nav id="menu-ui" class="menu-ui">
-		<a href="./regioni.html" class="active">Regioni</a>
+	<div class="navbarcbc">	
+	<div class="navbar-fixed-top navbarcb	" >
+		<div class="CB">#CONFISCATIBENE</div>
+	</div>
+	</div>
+	<nav id="me		nu-ui" class="menu-ui">
+		<a href="./regioni.html" >Regioni</a>
 		<a href="./province.html" >Province</a>
-		<a href="./comuni.html">Comuni</a>
+		<a href="./comuni.html" class="active">Comuni</a>
 	</nav>
 	<div id="map"></div>
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
-	<script type="text/javascript" src="./dati/regioni_beni_immobili.js"></script>
+	<script type="text/javascript" src="./dati/comuni_beni_immobili.js"></script>
 	<script type="text/javascript">
 
 	var map = L.map('map');
@@ -55,7 +65,7 @@
 
 		info.update = function (props) {
 			this._div.innerHTML = '<h4>Beni immobili confiscati</h4>' +  (props ?
-				'<b>' + '<span class="rossobc">' + props.NOME_REG + '</span>' + '</b><br /><br />' +
+				'<b>' + '<span class="rossobc">' + props.NOME_COM + '</span>' + '</b><br /><br />' +
 				'<b> Numero totale: </b>' + props.totale + '<br />' + 
 				'<b> Abitazioni: </b>' + props.Abitazione + '<br />' +
 				'<b> Altri beni: </b>' + props.Altri_beni + '<br />' +
@@ -73,15 +83,17 @@
 
 		// get color depending on population density value
 		function getColor(d) {
-			return d > 1659 ? '#BD0026' :
-			d > 1029  ? '#DA2122' :
-			d > 505  ? '#F14624' :
-			d > 86  ? '#F97534' :
-			d > 60   ? '#FD9F45' :
-			d > 18   ? '#FDC357' :
-			d > 3   ? '#FEE180' :
+			return d > 256 ? '#BD0026' :
+			d > 163  ? '#DA2122' :
+			d > 84  ? '#F14624' :
+			d > 47  ? '#F97534' :
+			d > 26   ? '#FD9F45' :
+			d > 13   ? '#FDC357' :
+			d > 5   ? '#FEE180' :
 			'#FFFFB2';
 		}
+
+
 
 		function style(feature) {
 			return {
@@ -129,12 +141,10 @@
 			});
 		}
 
-		geojson = L.geoJson(Beni_Regioni, {
+		geojson = L.geoJson(Beni_Comuni, {
 			style: style,
 			onEachFeature: onEachFeature
 		}).addTo(map);
-
-		
 
 
 		var legend = L.control({position: 'bottomright'});
@@ -142,7 +152,7 @@
 		legend.onAdd = function (map) {
 
 			var div = L.DomUtil.create('div', 'info legend'),
-			grades = [2, 3, 18, 60, 86, 505, 1029, 1659],
+			grades = [1, 5, 13, 26, 47, 84, 163, 256],
 			labels = [],
 			from, to;
 
