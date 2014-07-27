@@ -175,18 +175,18 @@
 		legend.addTo(map);
 
 
-		var geojson = L.geoJson(Beni_Comuni, {
+		var geojson = L.geoJson("", {
 			style: style,
 			onEachFeature: onEachFeature
 		}).addTo(map);
 
 
-      map.spin(true);
-      // Simulate AJAX
-      setTimeout(function () {
-          geojson.addData(Beni_Comuni);
-          map.spin(false);
-      }, 3000);
+		map.spin(true);
+
+		setTimeout(function () {
+			geojson.addData(Beni_Comuni);
+			map.spin(false);
+		}, 3000);
 
 		</script>
 	</body>
