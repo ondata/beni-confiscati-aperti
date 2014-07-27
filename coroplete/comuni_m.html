@@ -178,8 +178,8 @@
 			onEachFeature: onEachFeature
 		}).addTo(map);
 
-		
-		map.spin(true);
+
+		map.spin(true, {top: 280, left: 50});
 		$.ajax({url: 'http://aborruso.github.io/beni-confiscati-aperti/coroplete/dati/comuni_beni_immobili.js'})
 		.done(function() {
 			map.spin(false);
