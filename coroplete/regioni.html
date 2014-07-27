@@ -78,7 +78,7 @@
 			d > 505  ? '#F14624' :
 			d > 86  ? '#F97534' :
 			d > 60   ? '#FD9F45' :
-			d > 18   ? '#FDC357' :
+			d > 22   ? '#FDC357' :
 			d > 3   ? '#FEE180' :
 			'#FFFFB2';
 		}
@@ -142,7 +142,7 @@
 		legend.onAdd = function (map) {
 
 			var div = L.DomUtil.create('div', 'info legend'),
-			grades = [2, 3, 18, 60, 86, 505, 1029, 1659],
+			grades = [2, 3, 22, 60, 86, 505, 1029, 1659],
 			labels = [],
 			from, to;
 
