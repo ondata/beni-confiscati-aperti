@@ -25,9 +25,9 @@
 		</div>
 	</div>
 	<nav id="me		nu-ui" class="menu-ui">
-		<a href="./regioni_m.html" >Regioni</a>
-		<a href="./province_m.html" >Province</a>
 		<a href="./comuni_m.html" class="active">Comuni</a>
+		<a href="./province_m.html" >Province</a>
+		<a href="./regioni_m.html" >Regioni</a>
 	</nav>
 	<div id="map"></div>
 
@@ -90,9 +90,9 @@
 		// get color depending on population density value
 		function getColor(d) {
 			return d > 256 ? '#BD0026' :
-			d > 163  ? '#DA2122' :
+			d > 162  ? '#DA2122' :
 			d > 84  ? '#F14624' :
-			d > 47  ? '#F97534' :
+			d > 45  ? '#F97534' :
 			d > 26   ? '#FD9F45' :
 			d > 13   ? '#FDC357' :
 			d > 5   ? '#FEE180' :
@@ -155,7 +155,7 @@
 		legend.onAdd = function (map) {
 
 			var div = L.DomUtil.create('div', 'info legend'),
-			grades = [1, 5, 13, 26, 47, 84, 163, 256],
+			grades = [1, 5, 13, 26, 45, 84, 162, 256],
 			labels = [],
 			from, to;
 
