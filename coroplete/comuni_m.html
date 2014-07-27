@@ -15,9 +15,7 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 
-	<script type='text/javascript' src="./js/leaflet.spin.js"></script>
 
-	<script type='text/javascript' src="./js/spin.min.js"></script>
 
 </head>
 <body>
@@ -34,6 +32,10 @@
 	<div id="map"></div>
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+	<script type='text/javascript' src="./js/leaflet.spin.js"></script>
+
+	<script type='text/javascript' src="./js/spin.min.js"></script>
 
 	<script type="text/javascript" src="./dati/comuni_beni_immobili.js"></script>
 	<script type="text/javascript">
@@ -179,14 +181,12 @@
 		}).addTo(map);
 
 
-		map.spin(true, {top: 280, left: 50});
-		$.ajax({url: 'http://aborruso.github.io/beni-confiscati-aperti/coroplete/dati/comuni_beni_immobili.js'})
-		.done(function() {
-			map.spin(false);
-		})
-		.error(function () {
-			map.spin(false);
-		});
+      map.spin(true);
+      // Simulate AJAX
+      setTimeout(function () {
+          geojson.addData(Beni_Comuni);
+          map.spin(false);
+      }, 3000);
 
 		</script>
 	</body>
