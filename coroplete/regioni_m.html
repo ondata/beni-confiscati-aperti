@@ -72,13 +72,13 @@
 		info.update = function (props) {
 			this._div.innerHTML = '<h4>Beni immobili confiscati</h4>' +  (props ?
 				'<b>' + '<span class="rossobc">' + props.NOME_REG + '</span>' + '</b><br /><br />' +
-				'<b> Numero totale: </b>' + props.totale + '<br />' + 
-				'<b> Abitazioni: </b>' + props.Abitazione + '<br />' +
-				'<b> Altri beni: </b>' + props.Altri_beni + '<br />' +
-				'<b> Capannoni: </b>' + props.Capannone + '<br />' +
-				'<b> Fabbricati: </b>' + props.Fabbricato + '<br />' +
-				'<b> Locale: </b>' + props.Locale + '<br />' +
-				'<b> Terreni: </b>' + props.Terreno + '<br />'
+				'<b> Numero totale</b>: ' + '<em>' + props.totale  + '</em>'  + '<br />' + 
+				'<b> Abitazioni</b>: ' + props.Abitazione + '<br />' +
+				'<b> Altri beni</b>: ' + props.Altri_beni + '<br />' +
+				'<b> Capannoni</b>: ' + props.Capannone + '<br />' +
+				'<b> Fabbricati</b>: ' + props.Fabbricato + '<br />' +
+				'<b> Locale</b>: ' + props.Locale + '<br />' +
+				'<b> Terreni</b>: ' + props.Terreno + '<br />'
 				: 'Mouse su un poligono');
 		};
 
