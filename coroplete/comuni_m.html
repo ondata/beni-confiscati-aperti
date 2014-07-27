@@ -11,16 +11,20 @@
 	<link rel="stylesheet" href="./css/cp.css" />
 
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-    
-    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+
+	<script type='text/javascript' src="./js/leaflet.spin.js"></script>
+
+	<script type='text/javascript' src="./js/spin.min.js"></script>
 
 </head>
 <body>
 	<div class="navbarcbc">	
-	<div class="navbar-fixed-top navbarcb	" >
-		<div class="CB">#CONFISCATIBENE</div>
-	</div>
+		<div class="navbar-fixed-top navbarcb	" >
+			<div class="CB">#CONFISCATIBENE</div>
+		</div>
 	</div>
 	<nav id="me		nu-ui" class="menu-ui">
 		<a href="./regioni.html" >Regioni</a>
@@ -141,10 +145,7 @@
 			});
 		}
 
-		geojson = L.geoJson(Beni_Comuni, {
-			style: style,
-			onEachFeature: onEachFeature
-		}).addTo(map);
+		
 
 
 		var legend = L.control({position: 'bottomright'});
@@ -170,6 +171,20 @@
 		};
 
 		legend.addTo(map);
+
+
+		var geojson = L.geoJson(Beni_Comuni, {
+			style: style,
+			onEachFeature: onEachFeature
+		}).addTo(map);
+
+			
+		map.spin(true);
+
+		setTimeout(function () {
+			geojson.addData(Beni_Comuni);
+			map.spin(false);
+		}, 3000);
 
 		</script>
 	</body>
