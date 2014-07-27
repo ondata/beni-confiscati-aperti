@@ -7,31 +7,35 @@ body {
   padding-top: 50px;
 }
 
+.CB a:link,a:visited,a:hover {
+ color: #FFF;
+ text-decoration: none;
+}
 
 .navbarcbc {
-background-color: #EB593C;
-margin: auto;
-position: relative;
-max-width: 6040px;
-height:50px;
-margin-top: -50px;
+  background-color: #EB593C;
+  margin: auto;
+  position: relative;
+  max-width: 6040px;
+  height:50px;
+  margin-top: -50px;
 }
 
 .navbarcb{
-max-width: 1140px;
-background-color: #EB593C;
-/*border-bottom: 1px solid #cccccc;*/	
-margin: auto;
-position: relative;
+  max-width: 1140px;
+  background-color: #EB593C;
+  /*border-bottom: 1px solid #cccccc;*/	
+  margin: auto;
+  position: relative;
 }
 
 .CB{
-font-family: 'Bree Serif', serif;
-position: relative;
-padding: 10px 0 0 0;
-font-size: 2em;
-color: #fff;
-bottom:5px;
+  font-family: 'Bree Serif', serif;
+  position: relative;
+  padding: 10px 0 0 0;
+  font-size: 2em;
+  color: #fff;
+  bottom:5px;
 }
 
 .leaflet-sidebar {
