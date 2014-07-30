@@ -1,0 +1,8 @@
+      html, body {
+      	margin: 0;
+      	height: 100%;
+      	padding:0px;
+      }
+      #timeline{
+      	height:100%;
+      }
