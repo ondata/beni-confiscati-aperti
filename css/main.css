@@ -516,6 +516,7 @@ and (max-device-width : 568px) {
 .posta{
     text-align: center;
     font-family: 'Bree Serif', serif;
+	color: white;
 }
 
 .posta a:link {color:#FFFFFF;}      /* unvisited link */
@@ -526,6 +527,7 @@ and (max-device-width : 568px) {
 .press{
     text-align: center;
     font-family: 'Raleway', sans-serif;
+	color: white;
 }
 
 .press a:link {color:#FFFFFF;}      /* unvisited link */
